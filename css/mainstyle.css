@@ -1,0 +1,94 @@
+html{
+    background-image: url(./../images/background.webp);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    margin: 5%;
+    padding: 5%;
+    min-width: 300px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.profile{
+    text-align: center;
+}
+
+
+
+.picture img{
+    width: 80%;
+    height: auto;
+    filter:grayscale() brightness(1.5);
+    border-radius: 50%;
+
+}
+.title{
+    position: relative;
+    text-align: left;
+    margin: 5% 30%;
+}
+.title h2{
+    margin: 0;
+    text-transform: uppercase;
+}
+.sub-title{
+    margin: 0;
+    text-transform: capitalize;
+    font-size: 0.8em;
+}s
+nav{
+    width: 100vw;
+}
+nav ul{
+    display: flex; 
+    justify-content: center;
+
+    text-align: center;
+    padding-inline-start: 0;
+}
+nav ul li{
+    list-style: none;
+    padding: 0 10px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: rgb(135, 135, 135);
+    font-weight: 700;
+    font-size: 1em;
+    transition: text-shadow 0.3s;
+    line-break: loose;
+}
+nav ul li a:hover{
+    text-decoration: underline;
+    color: rgb(63, 63, 63);
+    font-weight: 700;
+    font-size: 1em;
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+}
+footer{
+    border-top: 2px solid gray;
+    padding-top: 2%;
+    font-size: 0.8em;
+}
+footer > article{
+    line-height: 20px;
+    text-align: center;
+}
+.foot-icon{
+
+}
+.foot-title{
+
+}
+
+
+
+@media screen and (min-width: 768px){
+    main{
+        display: flex;
+    }
+}
