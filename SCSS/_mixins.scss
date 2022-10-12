@@ -1,0 +1,12 @@
+@use "library" as l;
+
+@mixin tablet {
+    @media screen and (min-width:l.$tablet) {
+        @content; 
+    }  
+}
+@mixin desktop {
+    @media screen and (min-width:l.$desktop) {
+        @content; 
+    }  
+}
