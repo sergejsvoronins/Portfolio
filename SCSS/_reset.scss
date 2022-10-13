@@ -1,3 +1,4 @@
+@use "library" as l;
 *{
     margin: 0;
     padding: 0;
@@ -5,7 +6,7 @@
   }
 body{
     height: 100vh;
-    font-family: sans-serif;
     font-size: 18px;
-    color: black;
+    color: l.$first-color;
+    background-color: l.$fourth-color;
 }
