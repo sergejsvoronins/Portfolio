@@ -33,43 +33,22 @@ header .title {
 }
 header .title span {
   font-weight: 700;
-  font-size: 2em;
+  font-size: 1.25em;
   letter-spacing: 2px;
-  font-size: 2em;
   opacity: 1;
   transform: scale(0.94);
   filter: blur(4px);
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-}
-header .title span:nth-child(1) {
-  display: none;
   animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
-header .title span:nth-child(2) {
-  display: none;
-  animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-header .title span:nth-child(3) {
-  display: none;
-  animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-header .title span:nth-child(4) {
-  display: flex;
-  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-header .title span:nth-child(5) {
-  display: flex;
-  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
 @media screen and (min-width: 768px) {
-  header .title span:nth-child(1) {
-    display: flex;
+  header .title span {
+    font-size: 1.5em;
   }
-  header .title span:nth-child(2) {
-    display: flex;
-  }
-  header .title span:nth-child(3) {
-    display: flex;
+}
+@media screen and (min-width: 1200px) {
+  header .title span {
+    font-size: 2em;
   }
 }
 @media screen and (min-width: 768px) {
@@ -156,46 +135,43 @@ header .nav {
     width: 100%;
   }
 }
-header .nav .nav__wrapper {
-  overflow: hidden;
-}
-header .nav .nav__wrapper ul {
+header .nav ul {
   display: flex;
   flex-direction: column;
   padding-top: 100px;
   margin: 5px 5px;
 }
 @media screen and (min-width: 1200px) {
-  header .nav .nav__wrapper ul {
+  header .nav ul {
     flex-direction: row;
     padding-top: 20px;
     margin: 0;
     width: 40%;
   }
 }
-header .nav .nav__wrapper ul li {
+header .nav ul li {
   list-style: none;
   padding: 20px 20px;
   box-shadow: 0px 2px 2px rgba(39, 35, 67, 0.3);
 }
-header .nav .nav__wrapper ul li:hover {
+header .nav ul li:hover {
   background-color: #272343;
 }
 @media screen and (min-width: 1200px) {
-  header .nav .nav__wrapper ul li:hover {
+  header .nav ul li:hover {
     background-color: #ffffff;
   }
 }
-header .nav .nav__wrapper ul li:hover a {
+header .nav ul li:hover a {
   color: #ffffff;
 }
 @media screen and (min-width: 1200px) {
-  header .nav .nav__wrapper ul li:hover a {
+  header .nav ul li:hover a {
     color: #272343;
   }
 }
 @media screen and (min-width: 1200px) {
-  header .nav .nav__wrapper ul li {
+  header .nav ul li {
     width: 33%;
     text-align: center;
     padding: 10px;
@@ -204,7 +180,7 @@ header .nav .nav__wrapper ul li:hover a {
     border-right: 1px outset #ffffff;
   }
 }
-header .nav .nav__wrapper ul li a {
+header .nav ul li a {
   text-decoration: none;
   text-transform: uppercase;
   color: #272343;
@@ -212,7 +188,7 @@ header .nav .nav__wrapper ul li a {
   font-weight: 700;
 }
 @media screen and (min-width: 1200px) {
-  header .nav .nav__wrapper ul li a {
+  header .nav ul li a {
     text-transform: capitalize;
     font-size: 0.75em;
     letter-spacing: 2px;
@@ -234,6 +210,7 @@ footer {
 @media screen and (min-width: 1200px) {
   footer {
     flex-direction: row;
+    padding: 40px 0;
   }
 }
 footer .contacts {
