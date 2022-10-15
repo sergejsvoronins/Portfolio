@@ -1,4 +1,4 @@
-@use "library" as l;
+@use "./../abstracts/variables" as v;
 *{
     margin: 0;
     padding: 0;
@@ -7,8 +7,8 @@
 body{
     height: 100vh;
     font-size: 18px;
-    color: l.$first-color;
-    background-color: l.$fourth-color;
+    color: v.$first-color;
+    background-color: v.$fourth-color;
     main{
       height: 100%;
     }
