@@ -2,44 +2,49 @@
 @use "./../abstracts/mixins" as m;
 @use "./../abstracts/variables" as v;
 header{
-    .title{
-      @keyframes scale {
-        100% {
-          transform: scale(1);
-        }
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: v.$first-color;
+  .title{
+    @keyframes scale {
+      100% {
+        transform: scale(1);
       }
-      @keyframes fade-in {
-        100% {
-          opacity: 1;
-          filter: blur(0);
-        }
-      }
-      display: flex;
-      justify-content: end;
-      padding: 3em 0;
-      z-index: 3;
-      & span{
-        font-weight: 700;
-        font-size: 1.25em;
-        letter-spacing: 2px;
-        opacity: 1;
-        transform: scale(0.94);
-        filter: blur(4px);
-        animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-        animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
-        @include m.tablet{
-          font-size: 1.5em;
-        }
-        @include m.desktop{
-          font-size: 2em;
-        }
-      }
-      @include m.tablet{
-        justify-content: center;
-        @include m.desktop{
-        justify-content: start;
-        }
-      }
-      
     }
+    @keyframes fade-in {
+      100% {
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include m.desktop{
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    & span{
+      font-weight: 700;
+      font-size: 2em;
+      letter-spacing: 2px;
+      opacity: 1;
+      transform: scale(0.94);
+      filter: blur(4px);
+      animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+      animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+      @include m.tablet{
+        font-size: 2.5em;
+      }
+      @include m.desktop{
+        font-size: 3em;
+      }
+      }
+    
   }
+}

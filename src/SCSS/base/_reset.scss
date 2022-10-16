@@ -7,9 +7,8 @@
 body{
     height: 100vh;
     font-size: 18px;
-    color: v.$first-color;
     background-color: v.$fourth-color;
     main{
-      height: 100%;
+      background-color: v.$first-color;
     }
 }
