@@ -2,24 +2,30 @@
 @use "../abstracts/variables" as v;
 
 
-
 header{
     display: flex;
     flex-direction: column;
-    
+    margin-bottom: 30px;
 
     @include m.desktop{
         flex-direction: row;
     }
-    & .logo{
-        background-color: aqua;
+    & .img{
+        width: 100%;
+        text-align: center;
         @include m.desktop{
             width: 25%;
+        }
+        img {
+            width: 80%;
         }
     }
     & .headerTitle{
         @include m.desktop{
             width: 75%;
+        }
+        h1{
+            margin: 10px 0;
         }
     }
 }
