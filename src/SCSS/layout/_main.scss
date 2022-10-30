@@ -1,7 +1,0 @@
-@use "./../abstracts/mixins" as m;
-@use "./../abstracts/variables" as v;
-
-
-main{
-    background-color: v.$second-color;
-  }

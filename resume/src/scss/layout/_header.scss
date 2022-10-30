@@ -1,0 +1,25 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+
+
+header{
+    display: flex;
+    flex-direction: column;
+    
+
+    @include m.desktop{
+        flex-direction: row;
+    }
+    & .logo{
+        background-color: aqua;
+        @include m.desktop{
+            width: 25%;
+        }
+    }
+    & .headerTitle{
+        @include m.desktop{
+            width: 75%;
+        }
+    }
+}
