@@ -1,0 +1,18 @@
+@use "variables" as v;
+
+@mixin tablet {
+    @media screen and (min-width:v.$tablet) {
+        @content; 
+    }  
+}
+@mixin desktop {
+    @media screen and (min-width:v.$desktop) {
+        @content; 
+    }  
+}
+
+@mixin headerTitle {
+    text-transform: uppercase;
+    padding: 20px 0;
+    font-size: 30px;
+}

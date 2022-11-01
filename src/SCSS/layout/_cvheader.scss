@@ -1,0 +1,33 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+
+header{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    position: relative;
+
+    @include m.desktop{
+        flex-direction: row;
+    }
+    & .img{
+        width: 100%;
+        text-align: center;
+        @include m.desktop{
+            width: 25%;
+        }
+        img {
+            width: 80%;
+        }
+    }
+    & .headerTitle{
+        @include m.desktop{
+            width: 75%;
+        }
+        h1{
+            color: darkgreen;
+            margin: 10px 0;
+        }
+    }
+}

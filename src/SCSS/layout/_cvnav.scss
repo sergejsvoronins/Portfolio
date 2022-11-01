@@ -1,0 +1,14 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.navBtn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    a {
+        text-decoration: none;
+        i {
+            font-size: 30px;
+        }
+    }
+}

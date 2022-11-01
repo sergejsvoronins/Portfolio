@@ -1,0 +1,24 @@
+@use "./../abstracts/mixins" as m;
+@use "./../abstracts/variables" as v;
+
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: green;
+    &__header{
+        h2{
+            @include m.headerTitle;
+        }
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    &__social{
+        display: flex;
+        flex-direction: row;
+    }
+}

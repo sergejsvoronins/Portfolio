@@ -1,0 +1,70 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include m.desktop{
+        flex-direction: row;
+    }
+
+    .leftSide {
+        @include m.desktop{
+            width: 35%;
+        }
+        div {
+            h2{
+                color: darkgreen;
+                border-bottom: 2px solid green;
+            }
+            ul{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                li{
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    color: rgb(167, 164, 164);
+                    text-transform: lowercase;
+                    div {
+                        i{
+                            padding-right: 5px;
+                        }
+                    }
+                }             
+            }
+        }
+        
+        }
+    
+    .rightSide{
+        @include m.desktop{
+            width: 65%;
+        }
+        div{
+            ul{
+                li{
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    .rightSide__date{
+                        width: 20%;
+                    }
+                    .rightSide__title{
+                        width: 70%;
+                        h2 {
+                            color: darkgreen;
+                            border-bottom: 2px solid green;
+                        }
+                        span{
+                            font-size: 0.90em;
+                            color: rgb(167, 164, 164);
+                        }
+                    }
+                }   
+            } 
+        }
+    }
+}
+
