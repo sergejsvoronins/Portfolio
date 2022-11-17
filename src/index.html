@@ -11,11 +11,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
-    <script defer src="JS/main.js" type="module"></script>
+    <script defer src="ts/main.ts" type="module"></script>
 </head>
 <body>
     <header> 
-      <h1>Hej, mitt namn är Sergejs</h1>  
+      <h1>Hej, mitt namn är Sergejs.</h1>  
+      <section class="hero">
+        <img src="images/backgroundIT.webp" alt="itBg">
+      </section>
     </header>
   <nav>
     <input id="toggle" type="checkbox"></input>
@@ -32,7 +35,7 @@
   </nav>
   
     <main>
-      <section class="hero"></section>
+      
       <section id="about" class="about">
         <div class="about__header"><h2>Om mig</h2></div>
         <div class="about__img">
@@ -43,10 +46,16 @@
           <a href="./pages/cv.html">Resume</a>
         </div>
       </section>
+
+
+
       <section id="projects" class="projects">
         <div class="projects__header"><h2>Projects</h2></div>
         <div class="projects__container" id="projectsContainer"></div>
       </section>
+
+
+
       <section id="contact" class="contact">
         <div class="contact__header"><h2>Kontakta</h2></div>
         <form class="contact__form" action="">
@@ -72,6 +81,7 @@
           </div> 
         </div>
       </section>
+      
       
       </section>
       </section>

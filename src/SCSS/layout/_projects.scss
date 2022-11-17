@@ -7,33 +7,30 @@
     flex-direction: column;
     align-items: center;
     &__header{
-        h2 {
+        h2{
             @include m.headerTitle;
         }
-    } 
-    &__box{
+    }
+    &__container {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        &__container{
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.3);
+        div {
+            box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
             padding: 20px;
-            gap: 5px;
-            margin: 5px 0;
-            &__name{
-                text-align: center;
+            margin: 10px 0;
+            h2 {
+                text-transform: lowercase;
             }
-            &__technique{
-                display: flex;
-                justify-content: space-around;
+            a {
+                text-decoration: none;
             }
-            &__author{
+            p {
+                padding: 10px 0;
                 text-align: end;
-            }
-            &__date{
-                text-align: end;
+                i {
+                    font-size: 24px;
+                }
             }
         }
     }
