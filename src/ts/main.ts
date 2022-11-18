@@ -51,3 +51,21 @@ function createRepoProjects(someList: GithubRepo[]){
     }
     
 }
+let projects = document.getElementById("projects") as HTMLDivElement;
+let heroEl : HTMLDivElement = document.getElementById("header") as HTMLDivElement;
+console.log(window.scrollY)
+console.log(projects.offsetTop);
+console.log(heroEl.offsetHeight)
+
+
+window.addEventListener("scroll", titleColor)
+
+function titleColor () {
+    console.log(window.scrollY)
+    if (window.scrollY > projects.offsetHeight+heroEl.offsetHeight){
+        projects.style.backgroundColor = "yellow";
+    }
+    else {
+        projects.style.backgroundColor = "white";
+    }
+}

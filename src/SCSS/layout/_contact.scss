@@ -6,7 +6,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: green;
     &__header{
         h2{
             @include m.headerTitle;

@@ -14,9 +14,9 @@
     <script defer src="ts/main.ts" type="module"></script>
 </head>
 <body>
-    <header> 
+    <header id="header"> 
       <h1>Hej, mitt namn är Sergejs.</h1>  
-      <section class="hero">
+      <section class="hero" id="hero">
         <img src="images/backgroundIT.webp" alt="itBg">
       </section>
     </header>
@@ -26,12 +26,15 @@
       <div class="hamburgerLogo__topBun"></div>
       <div class="hamburgerLogo__bottomBun"></div>
     </label>
-    <div class="menu">
-         <ul>
-            <li class="delay1"><a href="#about">Om</a></li>
-            <li class="delay2"><a href="#projects">Projekter</a></li>
-            <li class="delay3"><a href="#contact">Kontakta</a></li>
-          </ul>
+
+      <div class="menu">
+        <div class="menu__wrapper"></div>
+        <ul>
+           <li class="delay1"><a href="#about">Om mig</a></li>
+           <li class="delay2"><a href="#projects">Projekter</a></li>
+           <li class="delay3"><a href="#contact">Kontakta</a></li>
+         </ul>
+      </div>
   </nav>
   
     <main>
