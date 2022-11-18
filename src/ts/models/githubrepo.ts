@@ -1,8 +1,8 @@
 
 export class GithubRepo {
     constructor (
-        public name:string,
-        public html_url:string,
+        public title:string,
+        public url:string,
         public description:string
         ){}
 }

@@ -1,5 +1,7 @@
 import axios from "axios";
+import { IGitHubResponse } from "./models/IGithubresponse";
 import { GithubRepo } from "./models/githubrepo";
+
 
 let projectsContainer : HTMLDivElement = document.getElementById("projectsContainer") as HTMLDivElement;
 
@@ -7,17 +9,13 @@ getRepos();
 
 function getRepos(){
     axios
-.get("https://api.github.com/users/sergejsvoronins/repos")
-.then((response)=>{
-    
-    console.log(response.data);
-    
-    let githubRepoList: GithubRepo[] = response.data.map((repo:GithubRepo)=>{
-        return new GithubRepo (repo.name, repo.html_url, repo.description)
-    })
-    
-    createRepoProjects(githubRepoList);
-    
+    .get<IGitHubResponse[]>("https://api.github.com/users/sergejsvoronins/repos")
+    .then((response)=>{
+        let githubRepoList: GithubRepo[] = response.data.map((repo:IGitHubResponse)=>{
+            return new GithubRepo (repo.name, repo.html_url, repo.description)
+        })
+        console.log(githubRepoList);
+        createRepoProjects(githubRepoList);
 })
 }
 function createRepoProjects(someList: GithubRepo[]){
@@ -28,10 +26,10 @@ function createRepoProjects(someList: GithubRepo[]){
             let repoContainer: HTMLDivElement = document.createElement("div");
             projectsContainer.appendChild(repoContainer);
             let repoTitle : HTMLHeadingElement =  document.createElement("h2");
-            repoTitle.innerHTML = someList[i].name;
+            repoTitle.innerHTML = someList[i].title;
             repoContainer.appendChild(repoTitle);
             let repoUrl : HTMLAnchorElement = document.createElement("a");
-            repoUrl.href = someList[i].html_url;
+            repoUrl.href = someList[i].url;
             repoUrl.target = "_blank";
             repoUrl.innerHTML = "link to github"
             repoContainer.appendChild(repoUrl);
