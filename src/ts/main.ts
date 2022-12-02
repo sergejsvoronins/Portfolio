@@ -1,23 +1,42 @@
 import axios from "axios";
 import { IGitHubResponse } from "./models/IGithubresponse";
 import { GithubRepo } from "./models/githubrepo";
+import { getRepos } from "./services/githubService";
+
+
+const headerTitleEl = document.getElementById("header__title") as HTMLHeadingElement;
+const strTitle : string = headerTitleEl.innerHTML;
+headerTitleEl.innerHTML = "";
+const splitTitle : string [] = strTitle.split("");
+for (let i=0; i<splitTitle.length; i++){
+    headerTitleEl.innerHTML += "<span>"+splitTitle[i]+"</span>";
+}
+let char : number= 0;
+let timer = setInterval(showChars, 50);
+
+function showChars (){
+    const span = headerTitleEl.querySelectorAll("span")[char];
+    span.classList.add("fade");
+    char++;
+    if(char===splitTitle.length){
+        complete();
+        return;
+    }
+}
+function complete(){
+    clearInterval(timer);
+}
+
 
 
 let projectsContainer : HTMLDivElement = document.getElementById("projectsContainer") as HTMLDivElement;
 
-getRepos();
-
-function getRepos(){
-    axios
-    .get<IGitHubResponse[]>("https://api.github.com/users/sergejsvoronins/repos")
-    .then((response)=>{
-        let githubRepoList: GithubRepo[] = response.data.map((repo:IGitHubResponse)=>{
-            return new GithubRepo (repo.name, repo.html_url, repo.description)
-        })
-        console.log(githubRepoList);
-        createRepoProjects(githubRepoList);
+getRepos().then((repos)=>{
+    createRepoProjects(repos);
 })
-}
+
+
+
 function createRepoProjects(someList: GithubRepo[]){
 
     for (let i=0; i<someList.length; i++){
@@ -49,21 +68,17 @@ function createRepoProjects(someList: GithubRepo[]){
     }
     
 }
-let projects = document.getElementById("projects") as HTMLDivElement;
-let heroEl : HTMLDivElement = document.getElementById("header") as HTMLDivElement;
-console.log(window.scrollY)
-console.log(projects.offsetTop);
-console.log(heroEl.offsetHeight)
 
+const observer = new IntersectionObserver ((entries) => {
+    entries.forEach((entry)=> {
+        if(entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+        else {
+            entry.target.classList.remove("show");
+        }
+    })
+})
 
-window.addEventListener("scroll", titleColor)
-
-function titleColor () {
-    console.log(window.scrollY)
-    if (window.scrollY > projects.offsetHeight+heroEl.offsetHeight){
-        projects.style.backgroundColor = "yellow";
-    }
-    else {
-        projects.style.backgroundColor = "white";
-    }
-}
+const hiddenElements = document.querySelectorAll(".chapterHeader");
+hiddenElements.forEach((el) => observer.observe(el));

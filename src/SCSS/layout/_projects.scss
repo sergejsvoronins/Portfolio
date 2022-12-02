@@ -6,19 +6,36 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include m.desktop{
+        height: 100vh;
+    }
     &__header{
-        h2{
-            @include m.headerTitle;
-        }
+        @include m.headerTitle;
     }
     &__container {
         width: 100%;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
+        background-color: dodgerblue;
+        @include m.tablet{
+           grid-template-columns: 1fr 1fr;
+           padding: 20px;
+        }
+        @include m.desktop{
+           grid-template-columns: 1fr 1fr 1fr;
+           padding: 50px;
+        }
         div {
-            box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
+            
             padding: 20px;
-            margin: 10px 0;
+            @include m.tablet{
+                margin: 10px;
+                box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
+             }
+            @include m.desktop{
+                margin: 30px;
+                padding: 50px;
+             }
             h2 {
                 text-transform: lowercase;
             }

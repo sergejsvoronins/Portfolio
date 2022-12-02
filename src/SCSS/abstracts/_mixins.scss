@@ -12,7 +12,26 @@
 }
 
 @mixin headerTitle {
-    text-transform: uppercase;
-    padding: 20px 0;
-    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    h2 {
+        text-transform: uppercase;
+        padding: 20px 0;
+        font-size: 30px;
+    }
+    @include tablet {
+        .chapterHeader{
+            opacity: 0;
+            transform: translateX(-500px);
+            transform: all 2s;
+            
+        }
+        .show {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 2s;
+        }
+    }
+
+    
 }
