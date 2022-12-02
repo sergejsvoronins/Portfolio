@@ -1,4 +1,5 @@
 @use "./../abstracts/variables" as v;
+@use "./../abstracts/mixins" as m;
 *{
     margin: 0;
     padding: 0;
@@ -10,5 +11,10 @@
   }
 body {
   background-color: white;
+  @include m.tablet {
+    header, main{
+      padding-left: 200px;
+    }
 
+  }
 }

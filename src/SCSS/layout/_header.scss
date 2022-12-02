@@ -44,8 +44,6 @@
               background-color: black;
               transition: all 0.2s ease-in-out;
             }
-        
-        
           }
           #toggle {
             display: none;
@@ -53,24 +51,13 @@
               transform: rotate(-45deg);
               top: 8px;
             }
-        
             &:checked + .hamburgerLogo .hamburgerLogo__bottomBun {
               transform: rotate(45deg);
               top: -8px;
             }
-    
             &:checked  +.hamburgerLogo +  .menu{
               opacity: 1;
               top: 0;
-            }
-            &:checked  +.hamburgerLogo +  .menu ul li.delay1{
-              opacity: 1;
-            }
-            &:checked  +.hamburgerLogo +  .menu ul li.delay2{
-              opacity: 1;
-            }
-            &:checked  +.hamburgerLogo + .menu ul li.delay3{
-              opacity: 1;
             }
           }
           .menu {
@@ -84,24 +71,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: lightgreen;
             @include m.tablet{
               opacity: 1;
               top: 0;
               left: 0;
               width: 200px;
+              min-width: 200px;
               bottom: 0;
               flex-direction: column;
             }
-              &__wrapper{
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                left: 0;
-                top: 0;
-                backdrop-filter: blur(20px);
-                background-color: lightgreen;
-                opacity: .5;
-              }
               ul {
                 display: flex;
                 flex-direction: column;
@@ -110,54 +89,31 @@
                 @include m.tablet{
                   height: 100%;
                 }
-                & li{
+                li{
                   list-style: none;
-                  i {
-                    display: none;
-                  }
-                  @include m.tablet{
-                    span {
-                      display: none;
-                    }
-                    i {
-                      display: block;
-                      font-size: 3em;
-                    }
-                  }
-                  & a {
+                  
+                   a {
                     text-decoration: none;
-                    color: black;
+                    color: orange;
                     text-transform: lowercase;
                     letter-spacing: 3px;
                     font-size: 2em;
-                    &:hover{
+                    span:hover{
                       color: yellowgreen;
                       transition-duration: 300ms;
                     }
-                  }
-                }
-                & .delay1{
-                  opacity: 0;
-                  transition-delay: 0.1s;
-                  transition-duration: 0.5s;
-                  @include m.tablet{
-                    opacity: 1;
-                  }
-                }
-                & .delay2{
-                  opacity: 0;
-                  transition-delay: 0.2s;
-                  transition-duration: 0.5s;  
-                  @include m.tablet{
-                    opacity: 1;
-                  }     
-                }
-                & .delay3{
-                  opacity: 0;
-                  transition-delay: 0.3s;
-                  transition-duration: 0.5s;
-                  @include m.tablet{
-                    opacity: 1;
+                    i {
+                      display: none;
+                    }
+                    @include m.tablet{
+                      span {
+                        display: none;
+                      }
+                      i {
+                        display: block;
+                        font-size: 3em;
+                      }
+                    }
                   }
                 }
               }
