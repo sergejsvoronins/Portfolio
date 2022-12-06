@@ -85,14 +85,21 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
+                align-items: center;
                 z-index: 5;
                 @include m.tablet{
                   height: 100%;
                 }
                 li{
                   list-style: none;
-                  
+
+                  &:hover {
+                    span {
+                      opacity: 1;
+                    }
+                  }
                    a {
+                    text-align: center;
                     text-decoration: none;
                     color: orange;
                     text-transform: lowercase;
@@ -107,7 +114,8 @@
                     }
                     @include m.tablet{
                       span {
-                        display: none;
+                        opacity: 0;
+                        transition: opacity 0.5s ease-in-out;
                       }
                       i {
                         display: block;
